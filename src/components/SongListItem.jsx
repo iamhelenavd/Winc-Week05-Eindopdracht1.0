@@ -3,10 +3,13 @@ import React from "react";
 function SongListItem(props) {
   return (
     <tr>
-      <td>{props.title}</td>
+      <td>{props.name}</td>
       <td>{props.artist}</td>
-      <td>{props.genres}</td>
+      <td>{props.genre}</td>
       <td>{props.rating}</td>
+      <td>
+        <button></button>
+      </td>
     </tr>
   );
 }

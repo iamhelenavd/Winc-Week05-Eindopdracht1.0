@@ -7,6 +7,7 @@ function SongList(props) {
     <SongListItem
       key={song.id}
       name={song.title}
+      artist={song.artist}
       genre={song.genre}
       rating={song.rating}
     />

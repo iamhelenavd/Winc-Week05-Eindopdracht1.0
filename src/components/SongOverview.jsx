@@ -6,17 +6,17 @@ const SongOverview = () => {
   const SongsDataList = [
     {
       id: "1",
-      Song: "oranges",
-      Artist: "Lady Gaga",
-      Genre: "Pop",
-      Rating: "4",
+      title: "oranges",
+      artist: "Lady Gaga",
+      genre: "Pop",
+      rating: "4",
     },
     {
       id: "2",
-      Song: "Bananas",
-      Artist: "Lady Gaga",
-      Genre: "Pop",
-      Rating: "4",
+      title: "Bananas",
+      artist: "Lady Gaga",
+      genre: "Pop",
+      rating: "4",
     },
   ];
 

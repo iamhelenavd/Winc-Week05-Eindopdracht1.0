@@ -71,7 +71,7 @@ const SongForm = (props) => {
           onChange={handleInputChange}
         />
       </label>
-      <button> Add Song</button>
+      <button type="submit"> Add Song</button>
     </form>
   );
 };
