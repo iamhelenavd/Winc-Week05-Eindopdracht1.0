@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import SongForm from "./SongForm";
-/* import SongList from "./SongList"; */
+import SongList from "./SongList";
 
 const SongOverview = () => {
   const SongsDataList = [
     {
-      id: "0",
+      id: "1",
       Song: "oranges",
       Artist: "Lady Gaga",
       Genre: "Pop",
       Rating: "4",
     },
-    { id: "0", Song: "Apples", Artist: "Lady Gaga", Genre: "Pop", Rating: "4" },
     {
-      id: "0",
+      id: "2",
       Song: "Bananas",
       Artist: "Lady Gaga",
       Genre: "Pop",
@@ -33,19 +32,20 @@ const SongOverview = () => {
 
   return (
     <div>
-      <header>
-        <h1>Winc Lil'Liedjeslijst</h1>
-      </header>
-      <SongForm addSong={addSong} />
-      <table>
-        <tr className="song-header">
-          <th className="song-row__item">Song</th>
-          <th className="song-row__item">Artist</th>
-          <th className="song-row__item">Genre</th>
-          <th className="song-row__item">Rating</th>
-        </tr>
-      </table>
-      {/*       <SongList songs={songs} /> */}
+      <div>
+        <SongForm addSong={addSong} />
+        <table>
+          <tbody>
+            <tr className="song-header">
+              <th className="song-row__item">Song</th>
+              <th className="song-row__item">Artist</th>
+              <th className="song-row__item">Genre</th>
+              <th className="song-row__item">Rating</th>
+            </tr>
+            <SongList songs={songs} />
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

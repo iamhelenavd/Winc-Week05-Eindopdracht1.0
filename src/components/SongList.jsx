@@ -1,14 +1,17 @@
-/* import React, { useState } from "react";
+import React from "react";
+import SongListItem from "./SongListItem";
 
-function SongList = props  {
-  const items = props.song.map((spng => 
-    
-    
-    <ListItems name={item.name} />);
-  return <ul>{items}</ul>;
-}
-
+function SongList(props) {
+  const stateSongs = props.songs;
+  const singleSong = stateSongs.map((song) => (
+    <SongListItem
+      key={song.id}
+      name={song.title}
+      genre={song.genre}
+      rating={song.rating}
+    />
+  ));
+  return singleSong;
 }
 
 export default SongList;
- ; */

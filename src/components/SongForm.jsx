@@ -12,17 +12,21 @@ const SongForm = (props) => {
 
   // Input change function SetSong
 
-  const handleInputChange = (event) => {
+  /*   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setSong({ ...song, [name]: value });
-  };
-
-  /*   const onSubmit = (event) => {
-    console.log(setSong(formChoises));
   }; */
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); //Stops defauls reloading behaviour
+  function handleInputChange(event) {
+    const value = event.target.value;
+    setSong({
+      ...song,
+      [event.target.name]: value,
+    });
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault(); //Stops defauls reloading behaviour
+    props.addSong(song);
     console.log(song);
   };
 
