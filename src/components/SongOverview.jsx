@@ -33,8 +33,11 @@ const SongOverview = () => {
 
   return (
     <div>
+      <header>
+        <h1>Winc Lil'Liedjeslijst</h1>
+      </header>
       <SongForm addSong={addSong} />
-      <table style="width:100%">
+      <table>
         <tr className="song-header">
           <th className="song-row__item">Song</th>
           <th className="song-row__item">Artist</th>

@@ -5,4 +5,9 @@ body {
   background: #50a3a2;
   width: 100%;
   height: 100%;
+  text-align: center;
+}
+
+table {
+  width: 100%;
 }

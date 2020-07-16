@@ -15,12 +15,15 @@ const SongForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setSong({ ...song, [name]: value });
+  };
 
-    const onSubmit = (event) => {
-      event.preventDefault();
-      props.addsong(song);
-      setSong(formChoises);
-    };
+  /*   const onSubmit = (event) => {
+    console.log(setSong(formChoises));
+  }; */
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); //Stops defauls reloading behaviour
+    console.log(song);
   };
 
   return (
@@ -31,7 +34,7 @@ const SongForm = (props) => {
           placeholder="title"
           name="title"
           value={song.title}
-          onChange={handleInputChange}
+          onChange={handleInputChange} // on change handler that changes te input value
         />
       </label>
 
@@ -68,4 +71,5 @@ const SongForm = (props) => {
     </form>
   );
 };
+
 export default SongForm;
