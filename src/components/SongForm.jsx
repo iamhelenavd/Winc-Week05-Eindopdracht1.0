@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-/* useEffect */
+
 const SongForm = (props) => {
   const formChoises = {
     id: "null",
@@ -10,7 +10,7 @@ const SongForm = (props) => {
   };
   const [song, setSong] = useState(formChoises);
 
-  // Input change function SetSong
+  //  Input change function SetSong //////////////////////////
 
   function handleInputChange(event) {
     const value = event.target.value;
@@ -19,16 +19,22 @@ const SongForm = (props) => {
       [event.target.name]: value,
     });
   }
+
   const handleSubmit = (event) => {
     event.preventDefault(); //Stops defauls reloading behaviour
     props.addSong(song);
     console.log(song);
     setSong(formChoises);
     const url = "https://lil-playlist-9a70b.firebaseio.com/Collections.json";
-    const data = song.title;
+
     fetch(url, {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        name: song.title,
+        artist: song.artist,
+        genre: song.genre,
+        rating: song.rating,
+      }),
     })
       .then((response) => {
         console.log(response);
@@ -37,10 +43,6 @@ const SongForm = (props) => {
         console.log(error);
       });
   };
-
-  /*   useEffect(() => {
-    formChoises();
-  }, []); */
 
   return (
     <form onSubmit={handleSubmit}>
@@ -71,7 +73,7 @@ const SongForm = (props) => {
         onChange={handleInputChange}
       >
         <option value="">Genre</option>
-        <option value="klassiek">Pop</option>
+        <option value="pop">Pop</option>
         <option value="jazz">Jazz</option>
         <option value="klassiek">Klassiek</option>
         <option value="anders">Anders</option>

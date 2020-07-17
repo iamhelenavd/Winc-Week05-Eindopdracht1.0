@@ -29,35 +29,36 @@ const SongOverview = () => {
   };
 
   // doe iets om deleten)
-  const deleteSong = (id) => {
+  function deleteSong(id) {
     setSongs(songs.filter((song) => song.id !== id));
+  }
 
-    /*   const handleRemove = (id) => {
+  /*   const handleRemove = (id) => {
     const newList = [...songs];
     setSongs(newList); */
 
-    /* const handleRemove = (id) => {
+  /* const handleRemove = (id) => {
     setSongs(songs.filter((song) => song.id !== id));
  */
-    /*   const handleRemove = (e) => {
+  /*   const handleRemove = (e) => {
     const { id } = e.target.parentElement;
     songs.splice(id, 1);
     setSongs([...songs]); */
-  };
 
   return (
     <div>
       <div>
         <SongForm addSong={addSong} />
-        <table>
+        <table classname="table">
           <tbody>
             <tr className="song-header">
               <th className="song-row__item">Song</th>
               <th className="song-row__item">Artist</th>
               <th className="song-row__item">Genre</th>
               <th className="song-row__item">Rating</th>
+              <th className="song-row__item">Filter</th>
             </tr>
-            <SongList songs={songs} deleteSong={deleteSong} />
+            <SongList songs={songs} onDelete={deleteSong} />
           </tbody>
         </table>
       </div>
