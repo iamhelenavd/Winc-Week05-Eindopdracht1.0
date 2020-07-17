@@ -12,11 +12,6 @@ const SongForm = (props) => {
 
   // Input change function SetSong
 
-  /*   const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setSong({ ...song, [name]: value });
-  }; */
-
   function handleInputChange(event) {
     const value = event.target.value;
     setSong({
@@ -28,6 +23,19 @@ const SongForm = (props) => {
     event.preventDefault(); //Stops defauls reloading behaviour
     props.addSong(song);
     console.log(song);
+    setSong(formChoises);
+    const url = "https://lil-playlist-9a70b.firebaseio.com/Collections.json";
+    const data = song.title;
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
