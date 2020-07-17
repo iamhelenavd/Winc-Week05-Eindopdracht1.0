@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+/* useEffect */
 const SongForm = (props) => {
   const formChoises = {
     id: "null",
@@ -38,6 +38,10 @@ const SongForm = (props) => {
       });
   };
 
+  /*   useEffect(() => {
+    formChoises();
+  }, []); */
+
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -60,28 +64,32 @@ const SongForm = (props) => {
         />
       </label>
 
-      <label>
-        <input
-          type="text"
-          placeholder="genre"
-          name="genre"
-          value={song.genre}
-          onChange={handleInputChange}
-        />
-      </label>
+      <select
+        placeholder="genre"
+        name="genre"
+        value={song.rating}
+        onChange={handleInputChange}
+      >
+        <option value="">Genre</option>
+        <option value="klassiek">Pop</option>
+        <option value="jazz">Jazz</option>
+        <option value="klassiek">Klassiek</option>
+        <option value="anders">Anders</option>
+      </select>
 
-      <label>
-        <input
-          type="text"
-          placeholder="rating"
-          name="rating"
-          value={song.rating}
-          onChange={handleInputChange}
-        />
-      </label>
+      <select
+        placeholder="rating"
+        name="rating"
+        value={song.rating}
+        onChange={handleInputChange}
+      >
+        <option value="">Rating</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
       <button type="submit"> Add Song</button>
     </form>
   );
 };
-
 export default SongForm;
