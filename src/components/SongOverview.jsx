@@ -29,6 +29,21 @@ const SongOverview = () => {
   };
 
   // doe iets om deleten)
+  const deleteSong = (id) => {
+    setSongs(songs.filter((song) => song.id !== id));
+
+    /*   const handleRemove = (id) => {
+    const newList = [...songs];
+    setSongs(newList); */
+
+    /* const handleRemove = (id) => {
+    setSongs(songs.filter((song) => song.id !== id));
+ */
+    /*   const handleRemove = (e) => {
+    const { id } = e.target.parentElement;
+    songs.splice(id, 1);
+    setSongs([...songs]); */
+  };
 
   return (
     <div>
@@ -42,7 +57,7 @@ const SongOverview = () => {
               <th className="song-row__item">Genre</th>
               <th className="song-row__item">Rating</th>
             </tr>
-            <SongList songs={songs} />
+            <SongList songs={songs} deleteSong={deleteSong} />
           </tbody>
         </table>
       </div>

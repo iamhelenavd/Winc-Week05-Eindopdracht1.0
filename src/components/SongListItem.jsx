@@ -2,16 +2,19 @@ import React from "react";
 
 function SongListItem(props) {
   return (
-    <tr>
+    <tr key={props.id}>
       <td>{props.name}</td>
       <td>{props.artist}</td>
       <td>{props.genre}</td>
       <td>{props.rating}</td>
       <td>
-        <button></button>
+        <button onClick={() => props.deleteSong(props.id)}> Delete </button>
       </td>
     </tr>
   );
 }
 
 export default SongListItem;
+
+/* onClick={props.handleRemove} */
+/* onClick={() => props.handleRemove(props.id)} */
