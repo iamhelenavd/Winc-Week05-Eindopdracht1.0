@@ -73,10 +73,10 @@ const SongForm = (props) => {
         onChange={handleInputChange}
       >
         <option value="">Genre</option>
-        <option value="pop">Pop</option>
-        <option value="jazz">Jazz</option>
-        <option value="klassiek">Klassiek</option>
-        <option value="anders">Anders</option>
+        <option value="Pop">Pop</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Klassiek">Klassiek</option>
+        <option value="Anders">Anders</option>
       </select>
 
       <select
@@ -89,6 +89,7 @@ const SongForm = (props) => {
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
+        <option value="3">4</option>
       </select>
       <button type="submit"> Add Song</button>
     </form>
