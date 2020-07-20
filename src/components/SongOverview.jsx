@@ -37,9 +37,9 @@ const SongOverview = () => {
   };
 
   // DELETE song resource API
-  const handleDelete = async (songId) => {
+  const handleDelete = async (id) => {
     try {
-      const deleteURL = `https://lil-playlist-9a70b.firebaseio.com/Collections/${songId}.json`;
+      const deleteURL = `https://lil-playlist-9a70b.firebaseio.com/Collections/${id}.json`;
       const response = await fetch(deleteURL, { method: "DELETE" });
       const result = await response.json();
       return result;
@@ -56,7 +56,7 @@ const SongOverview = () => {
     <div>
       <div>
         <SongForm addSong={addSong} />
-        <table classname="table">
+        <table>
           <tbody>
             <tr className="song-header">
               <th className="song-row__item">Song</th>
@@ -65,7 +65,7 @@ const SongOverview = () => {
               <th className="song-row__item">Rating</th>
               <th className="song-row__item">Delete</th>
             </tr>
-            <SongList songs={songs} onDelete={deleteSong} />
+            <SongList songs={songs} deleteSong={deleteSong} />
           </tbody>
         </table>
       </div>

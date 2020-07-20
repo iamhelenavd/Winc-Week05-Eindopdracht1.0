@@ -2,7 +2,7 @@ import React from "react";
 
 function SongListItem(props) {
   return (
-    <tr key={props.id}>
+    <tr>
       <td>{props.name}</td>
       <td>{props.artist}</td>
       <td>{props.genre}</td>

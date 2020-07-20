@@ -6,10 +6,12 @@ function SongList(props) {
   const singleSong = stateSongs.map((song) => (
     <SongListItem
       key={song.id}
+      id={song.id}
       name={song.title}
       artist={song.artist}
       genre={song.genre}
       rating={song.rating}
+      deleteSong={props.deleteSong}
     />
   ));
   return singleSong;

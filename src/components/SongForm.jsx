@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 const SongForm = (props) => {
-  const formChoises = {
+  const formChoices = {
     id: "null",
     title: "",
     artist: "",
     genre: "",
     rating: "",
   };
-  const [song, setSong] = useState(formChoises);
+  const [song, setSong] = useState(formChoices);
 
   //  Input change function SetSong //////////////////////////
 
@@ -24,12 +24,13 @@ const SongForm = (props) => {
     event.preventDefault(); //Stops defauls reloading behaviour
     props.addSong(song);
     console.log(song);
-    setSong(formChoises);
+    setSong(formChoices);
     const url = "https://lil-playlist-9a70b.firebaseio.com/Collections.json";
 
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
+        key: song.id,
         name: song.title,
         artist: song.artist,
         genre: song.genre,
@@ -89,7 +90,7 @@ const SongForm = (props) => {
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
-        <option value="3">4</option>
+        <option value="4">4</option>
       </select>
       <button type="submit"> Add Song</button>
     </form>
